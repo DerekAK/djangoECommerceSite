@@ -29,4 +29,5 @@ runs it using manage.py in the command to ensure that the command knows about th
 can be used outside of a project directory and is used to create apps that can be installed by any project
 
 python manage.py [makemigrations] to write migration file,[migrate] to update database
-if [store] app is at migration 0004, can downgrade it by saying python manage.py migrate store 0003
+if [store] app is at migration 0004, can downgrade it by saying python manage.py migrate store 0003 (this will not change the code, just the migration file)
+to undo changes to code though, still need to delete the added code because if makemigrations again it will just add back the code changes
