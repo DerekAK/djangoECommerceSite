@@ -1,0 +1,29 @@
+most popular web framework for python
+tons of features (admin site, object-relational mapper (ORM), authentication, caching)
+
+front-end is part that is loaded into a web browser on client's machine
+back-end is part that runs on web server and responsible for data processing and handling client requests
+
+HTTP is the protocol for how clients and servers communicate
+servers can respond in 2 ways:
+    1. server generates page and returns html page to client
+    2. (Best practice) server generates and returns data to the client
+    and pushes responsibility to the client to do things with data (using front end frameworks)
+    
+If using best practice, need the server to provide an API to clients so that clients can access this data
+Django allows us to build APIs
+
+everytime creating a django project, need to set up a new virtual environment
+so workflow is as follows:
+    make a new directory for the project
+    pipenv install django
+    to activate virtual environment, run pipenv shell
+    django-admin is used to do many things?
+    django-admin startproject [project name]
+
+everytime register a new django app with django-admin startapp [app name], need to register it in settings.py file (INSTALLED_APPS)
+urls.py in main project folder is the overall url handler
+
+python manage.py runserver/startapp/etc. is different from django-admin runserver/startapp/etc. because it is run through a project directory and
+runs it using manage.py in the command to ensure that the command knows about the project configurations and settings. using the second command
+can be used outside of a project directory and is used to create apps that can be installed by any project
