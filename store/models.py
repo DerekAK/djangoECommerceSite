@@ -33,7 +33,7 @@ class Product(models.Model):
     title = models.CharField(max_length=255) #.CharField for short-medium strings
     description = models.TextField()
     # let's say max price is 9999.99
-    price = models.DecimalField(max_digits=6, decimal_places=2) # use DecimalField, not FloatField, for monetary values
+    unit_price = models.DecimalField(max_digits=6, decimal_places=2) # use DecimalField, not FloatField, for monetary values
     inventory = models.IntegerField()
     last_update = models.DateTimeField(auto_now=True)
     
@@ -62,7 +62,7 @@ class Customer(models.Model):
 
     # research django meta data
     class Meta:
-        db_table = 'store_customers'
+        db_table = 'store_customer'
         indexes = [
             models.Index(fields=['last_name', 'first_name'])
         ]

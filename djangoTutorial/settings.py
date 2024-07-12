@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'djangoTutorial.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'store',
+        'NAME': 'storefront',
         'HOST': 'localhost',
         'USER': 'root',
         'PASSWORD': 'GrumpyScroob66!'
