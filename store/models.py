@@ -28,6 +28,13 @@ class Collection(models.Model):
     # this will stop error that tells us there is a name clash
     featured_product = models.ForeignKey('Product', on_delete=models.SET_NULL, null=True, related_name='+')
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['title']
+
+
 class Product(models.Model):
     slug = models.SlugField()
     title = models.CharField(max_length=255) #.CharField for short-medium strings
@@ -44,6 +51,12 @@ class Product(models.Model):
     # a promotion can be associated with many products and vice versa
     promotions = models.ManyToManyField(Promotion)
 
+    def __str__(self):
+        return str(self.title) + ": " + str(self.collection.title)
+
+    class Meta:
+        ordering = ["title"]
+
 class Customer(models.Model):
     MEM_BRONZE = 'B'
     MEM_SILVER = 'S'
@@ -59,6 +72,9 @@ class Customer(models.Model):
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=255)
     birth_date = models.DateField(null=True)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
 
     # research django meta data
     class Meta:

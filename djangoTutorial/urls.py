@@ -18,6 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 import debug_toolbar
 
+
+admin.site.site_header = "Storefront Admin"
+admin.site.index_title = "Admin"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # this urlconfig ensures that any link with 'playground/' is handled by playground.urls
